@@ -20,9 +20,25 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('beyerz_api_client');
 
-        // Here you should define the parameters that are allowed to
-        // configure your bundle. See the documentation linked above for
-        // more information on that topic.
+        $rootNode->children()
+                ->arrayNode('apis')
+                    ->prototype('array')
+                        ->children()
+                            ->scalarNode('manager')
+                                ->info("Your custom manager class service, should start with an @")
+                            ->end()
+                            ->scalarNode('base_url')
+                                ->info("The base url to use for your api connection")
+                            ->end()
+                            ->arrayNode('options')
+                                ->info("See the GuzzleHttp options list for options that you can use")
+                                ->useAttributeAsKey('name')
+                                ->prototype('scalar')->end()
+                            ->end()
+                        ->end()
+                    ->end()
+                ->end()
+            ->end();
 
         return $treeBuilder;
     }
