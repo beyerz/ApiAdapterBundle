@@ -10,7 +10,7 @@ namespace Beyerz\ApiClientBundle\Adapter;
 
 use Symfony\Component\DependencyInjection\ContainerAwareTrait;
 
-class Adapter implements AdapterInterface
+abstract class Adapter implements AdapterInterface
 {
     use ContainerAwareTrait;
 
@@ -30,6 +30,7 @@ class Adapter implements AdapterInterface
 
     /**
      * @param $response
+     *
      * @return $this
      */
     public function setResponse($response)
@@ -41,12 +42,14 @@ class Adapter implements AdapterInterface
 
     /**
      * @param $class
+     *
      * @return mixed
      */
     abstract public function deserialize($class);
 
     /**
      * @param $input
+     *
      * @return mixed
      */
     abstract public function serialize($input);

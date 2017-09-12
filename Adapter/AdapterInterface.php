@@ -11,7 +11,6 @@ namespace Beyerz\ApiClientBundle\Adapter;
 
 interface AdapterInterface
 {
-
     public function getResponse();
 
     public function setResponse($response);

@@ -1,4 +1,10 @@
 services:
-#    beyerz_api_client.example:
-#        class: Beyerz\ApiClientBundle\Example
-#        arguments: ["@service_id", "plain_value", "%parameter%"]
+    beyerz_api_client.adapter.json:
+      class: Beyerz\ApiClientBundle\Adapter\JsonAdapter
+      calls:
+        - [setContainer, ['@service_container']]
+
+    beyerz_api_client.adapter.xml:
+      class: Beyerz\ApiClientBundle\Adapter\XMLAdapter
+      calls:
+        - [setContainer, ['@service_container']]

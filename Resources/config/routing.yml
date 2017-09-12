@@ -1,3 +1,0 @@
-beyerz_api_client_homepage:
-    path:     /
-    defaults: { _controller: BeyerzApiClientBundle:Default:index }

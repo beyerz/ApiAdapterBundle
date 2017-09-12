@@ -26,3 +26,13 @@ public function registerBundles()
 ```
 
 # Usage
+Select the correct adapter
+
+Create your own gateway class that extends the correct base gateway
+
+Potentially create a manager (facade) that your system can interact with the api
+
+Create the response entities and use JMSSerializer to define the deserializer configs
+
+#TODO
+#Add a sample of how it works
