@@ -1,0 +1,33 @@
+{
+  "name": "beyerz/api-client-bundle",
+  "description": "Symfony bundle to act as an api connector and adapter for third party apis",
+  "type": "symfony-bundle",
+  "authors": [
+    {
+      "name": "Lance Bailey",
+      "homepage": "http://www.me-vs-php.com"
+    }
+  ],
+  "keywords": [
+    "Symfony",
+    "Symfony2",
+    "api",
+    "api adapter",
+    "rest api",
+    "soap api",
+    "api client"
+  ],
+  "license": "MIT",
+  "require": {
+    "php": ">=7.0",
+    "symfony/symfony": "2.8.*"
+  },
+  "require-dev": {
+    "symfony/phpunit-bridge": "~3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Beyerz\\ApiClientBundle\\": ""
+    }
+  }
+}
