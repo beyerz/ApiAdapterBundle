@@ -40,6 +40,7 @@ class SoapGateway extends Gateway
     public function request($method, $parameters = [], $class = null)
     {
         $response = $this->client->__soapCall($method, $parameters);
+
         if (!is_null($class)) {
             return $this->adaptResponse($response, $class);
         }

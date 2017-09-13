@@ -33,12 +33,12 @@ class Gateway
     protected $logger;
 
     /**
-     * @param Response $response
+     * @param $response
      * @param          $class
      *
      * @return array|\JMS\Serializer\scalar|mixed|object
      */
-    protected function adaptResponse(Response $response, $class)
+    protected function adaptResponse($response, $class)
     {
         $this->adapter->setResponse($response);
 

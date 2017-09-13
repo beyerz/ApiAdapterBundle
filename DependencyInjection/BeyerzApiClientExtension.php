@@ -36,27 +36,61 @@ class BeyerzApiClientExtension extends Extension implements PrependExtensionInte
     public function prepend(ContainerBuilder $container)
     {
         $bundles = $container->getParameter('kernel.bundles');
+
         if (!isset($bundles['CsaGuzzleBundle'])) {
             throw new MissingDependencyException("CsaGuzzleBundle required, please ensure that it was properly included");
+        }
+
+        if (!isset($bundles['BeSimpleSoapBundle'])) {
+            throw new MissingDependencyException("BeSimpleSoapBundle required, please ensure that it was properly included");
         }
 
         $configs = $container->getExtensionConfig($this->getAlias());
         $config = $this->processConfiguration(new Configuration(), $configs);
 
-        var_dump($config);
-        die;
-//        if (isset($config['auth_token']) && isset($config['account_sid'])) {
-//            $prependConfig['profiler'] = '%kernel.debug%';
-//            $prependConfig['logger'] = '%kernel.debug%';
-//            $prependConfig['clients']['chizla_emailage'] = [
-//                'lazy'   => true,
-//                'config' => [
-//                    'base_uri'    => $config['sandbox'] === true ? self::EMAILAGE_SANDBOX_URI : self::EMAILAGE_PRODUCTION_URI,
-//                    'auth_token'  => $config['auth_token'],
-//                    'account_sid' => $config['account_sid'],
-//                ],
-//            ];
-//            $container->prependExtensionConfig('csa_guzzle', $prependConfig);
-//        }
+        $soap = $config['soap'];
+        $json = $config['json'];
+        $xml = $config['xml'];
+
+        $this->prependSoap($container, $soap);
+        $this->prependJson($container, $json);
+        $this->prependXML($container, $xml);
+
+    }
+
+    protected function prependSoap(ContainerBuilder $container, array $config)
+    {
+        foreach ($config as $api => $settings) {
+            $prependConfig['clients'][$api] = [
+                'wsdl' => $settings[Configuration::ENDPOINT_WSDL],
+            ];
+            $container->prependExtensionConfig('be_simple_soap', $prependConfig);
+        }
+    }
+
+    protected function prependJson(ContainerBuilder $container, array $config)
+    {
+        foreach ($config as $api => $settings) {
+            $prependConfig['profiler'] = '%kernel.debug%';
+            $prependConfig['logger'] = '%kernel.debug%';
+            $prependConfig['clients'][$api] = [
+                'lazy'   => true,
+                'config' => array_merge(['base_uri' => $settings['base_url']], $settings['options']),
+            ];
+            $container->prependExtensionConfig('csa_guzzle', $prependConfig);
+        }
+    }
+
+    protected function prependXML(ContainerBuilder $container, array $config)
+    {
+        foreach ($config as $api => $settings) {
+            $prependConfig['profiler'] = '%kernel.debug%';
+            $prependConfig['logger'] = '%kernel.debug%';
+            $prependConfig['clients'][$api] = [
+                'lazy'   => true,
+                'config' => array_merge(['base_uri' => $settings['base_url']], $settings['options']),
+            ];
+            $container->prependExtensionConfig('csa_guzzle', $prependConfig);
+        }
     }
 }

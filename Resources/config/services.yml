@@ -8,3 +8,8 @@ services:
       class: Beyerz\ApiClientBundle\Adapter\XMLAdapter
       calls:
         - [setContainer, ['@service_container']]
+
+    beyerz_api_client.adapter.soap:
+      class: Beyerz\ApiClientBundle\Adapter\SoapAdapter
+      calls:
+        - [setContainer, ['@service_container']]
