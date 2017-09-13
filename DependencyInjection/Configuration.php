@@ -12,7 +12,6 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
  */
 class Configuration implements ConfigurationInterface
 {
-    const SCALAR_MANAGER = 'manager';
 
     const ENDPOINT_URL = 'base_url';
     const ENDPOINT_WSDL = 'wsdl';
@@ -49,10 +48,6 @@ class Configuration implements ConfigurationInterface
 
         $node->prototype('array')
             ->children()
-                ->scalarNode(self::SCALAR_MANAGER)
-                    ->isRequired()
-                    ->info("Your custom manager class service, should start with an @")
-                ->end()
                 ->scalarNode(self::ENDPOINT_URL)
                     ->isRequired()
                     ->info("The base url to use for your api connection")
@@ -75,10 +70,6 @@ class Configuration implements ConfigurationInterface
 
         $node->prototype('array')
             ->children()
-                ->scalarNode(self::SCALAR_MANAGER)
-                    ->isRequired()
-                    ->info("Your custom manager class service, should start with an @")
-                ->end()
                 ->scalarNode(self::ENDPOINT_WSDL)
                     ->isRequired()
                     ->info("The path to the wsdl")
@@ -101,10 +92,6 @@ class Configuration implements ConfigurationInterface
 
         $node->prototype('array')
             ->children()
-                ->scalarNode(self::SCALAR_MANAGER)
-                    ->isRequired()
-                    ->info("Your custom manager class service, should start with an @")
-                ->end()
                 ->scalarNode(self::ENDPOINT_URL)
                     ->isRequired()
                     ->info("The base url to use for your api connection")
