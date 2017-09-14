@@ -1,8 +1,8 @@
 <?php
 
-namespace Beyerz\ApiClientBundle\DependencyInjection;
+namespace Beyerz\ApiAdapterBundle\DependencyInjection;
 
-use Beyerz\ApiClientBundle\Exception\MissingDependencyException;
+use Beyerz\ApiAdapterBundle\Exception\MissingDependencyException;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
@@ -14,7 +14,7 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
  *
  * @link http://symfony.com/doc/current/cookbook/bundles/extension.html
  */
-class BeyerzApiClientExtension extends Extension implements PrependExtensionInterface
+class BeyerzApiAdapterExtension extends Extension implements PrependExtensionInterface
 {
     /**
      * {@inheritdoc}

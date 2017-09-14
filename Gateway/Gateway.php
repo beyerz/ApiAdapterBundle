@@ -6,7 +6,7 @@
  * Time: 15:30
  */
 
-namespace Beyerz\ApiClientBundle\Gateway;
+namespace Beyerz\ApiAdapterBundle\Gateway;
 
 
 use Beyerz\ApiClientBundle\Adapter\AdapterInterface;

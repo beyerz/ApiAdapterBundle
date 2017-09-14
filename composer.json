@@ -1,5 +1,5 @@
 {
-  "name": "beyerz/api-client-bundle",
+  "name": "beyerz/api-adapter-bundle",
   "description": "Symfony bundle to act as an api connector and adapter for third party apis",
   "type": "symfony-bundle",
   "authors": [
@@ -15,7 +15,7 @@
     "api adapter",
     "rest api",
     "soap api",
-    "api client"
+    "api adapter"
   ],
   "license": "MIT",
   "require": {

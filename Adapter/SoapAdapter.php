@@ -6,7 +6,7 @@
  * Time: 14:02
  */
 
-namespace Beyerz\ApiClientBundle\Adapter;
+namespace Beyerz\ApiAdapterBundle\Adapter;
 
 
 class SoapAdapter extends Adapter

@@ -6,7 +6,7 @@
  * Time: 13:56
  */
 
-namespace Beyerz\ApiClientBundle\Adapter;
+namespace Beyerz\ApiAdapterBundle\Adapter;
 
 
 class XMLAdapter extends Adapter

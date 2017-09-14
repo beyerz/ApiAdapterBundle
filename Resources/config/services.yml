@@ -1,15 +1,15 @@
 services:
-    beyerz_api_client.adapter.json:
-      class: Beyerz\ApiClientBundle\Adapter\JsonAdapter
+    beyerz_api_adapter.adapter.json:
+      class: Beyerz\ApiAdapterBundle\Adapter\JsonAdapter
       calls:
         - [setContainer, ['@service_container']]
 
-    beyerz_api_client.adapter.xml:
-      class: Beyerz\ApiClientBundle\Adapter\XMLAdapter
+    beyerz_api_adapter.adapter.xml:
+      class: Beyerz\ApiAdapterBundle\Adapter\XMLAdapter
       calls:
         - [setContainer, ['@service_container']]
 
-    beyerz_api_client.adapter.soap:
-      class: Beyerz\ApiClientBundle\Adapter\SoapAdapter
+    beyerz_api_adapter.adapter.soap:
+      class: Beyerz\ApiAdapterBundle\Adapter\SoapAdapter
       calls:
         - [setContainer, ['@service_container']]

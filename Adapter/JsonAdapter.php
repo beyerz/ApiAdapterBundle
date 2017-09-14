@@ -6,7 +6,7 @@
  * Time: 13:55
  */
 
-namespace Beyerz\ApiClientBundle\Adapter;
+namespace Beyerz\ApiAdapterBundle\Adapter;
 
 
 class JsonAdapter extends Adapter

@@ -6,7 +6,7 @@
  * Time: 11:34
  */
 
-namespace Beyerz\ApiClientBundle\Exception;
+namespace Beyerz\ApiAdapterBundle\Exception;
 
 
 class MissingDependencyException extends \Exception

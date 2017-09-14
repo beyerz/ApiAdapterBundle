@@ -1,6 +1,6 @@
 <?php
 
-namespace Beyerz\ApiClientBundle\DependencyInjection;
+namespace Beyerz\ApiAdapterBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -30,7 +30,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('beyerz_api_client');
+        $rootNode = $treeBuilder->root('beyerz_api_adapter');
 
         $rootNode->children()
                 ->append($this->addJsonParametersNode())

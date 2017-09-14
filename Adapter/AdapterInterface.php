@@ -6,7 +6,7 @@
  * Time: 13:44
  */
 
-namespace Beyerz\ApiClientBundle\Adapter;
+namespace Beyerz\ApiAdapterBundle\Adapter;
 
 
 interface AdapterInterface

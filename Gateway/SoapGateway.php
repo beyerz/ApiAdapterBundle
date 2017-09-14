@@ -6,7 +6,7 @@
  * Time: 15:52
  */
 
-namespace Beyerz\ApiClientBundle\Gateway;
+namespace Beyerz\ApiAdapterBundle\Gateway;
 
 
 use BeSimple\SoapClient\SoapClient;
