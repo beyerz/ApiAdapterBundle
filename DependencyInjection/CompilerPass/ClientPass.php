@@ -25,11 +25,10 @@ class ClientPass implements CompilerPassInterface
     public function process(ContainerBuilder $container)
     {
         $configs = $this->getExtensionConfig($container);
-
         foreach ($configs as $api => $clients) {
             foreach ($clients as $client => $clientConfig) {
                 //locate the already defined service for this client and add the alias
-                $alias = sprintf("beyerz.api.client.%s", $client);
+                $alias = sprintf("beyerz_api_adapter.client.%s", $client);
                 switch ($api) {
                     case Configuration::ENGINE_JSON:
                     case Configuration::ENGINE_XML:
@@ -56,7 +55,7 @@ class ClientPass implements CompilerPassInterface
      */
     private function getExtensionConfig(ContainerBuilder $container)
     {
-        $configs = $container->getExtensionConfig("beyerz_api_client");
+        $configs = $container->getExtensionConfig("beyerz_api_adapter");
         $configuration = new Configuration();
         $processor = new Processor();
 

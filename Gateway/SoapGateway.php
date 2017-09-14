@@ -10,7 +10,7 @@ namespace Beyerz\ApiAdapterBundle\Gateway;
 
 
 use BeSimple\SoapClient\SoapClient;
-use Beyerz\ApiClientBundle\Adapter\AdapterInterface;
+use Beyerz\ApiAdapterBundle\Adapter\AdapterInterface;
 use Symfony\Bridge\Monolog\Logger;
 
 class SoapGateway extends Gateway
