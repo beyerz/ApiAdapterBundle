@@ -9,7 +9,7 @@
 namespace Beyerz\ApiAdapterBundle\Gateway;
 
 
-use Beyerz\ApiClientBundle\Adapter\AdapterInterface;
+use Beyerz\ApiAdapterBundle\Adapter\AdapterInterface;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Response;
 use Symfony\Bridge\Monolog\Logger;
