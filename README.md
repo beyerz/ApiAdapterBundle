@@ -15,7 +15,7 @@ Using JMSSerializer, you will simply need to provide the data class to be popula
 ### Application Kernel
 
 Add ApiClientBundle to the `registerBundles()` method of your application kernel:
-
+Due to the way that this bundle is compiled and the fact that other bundles could require it, please ensure that the bundle is the last parameter in the array.
 ```php
 public function registerBundles()
 {
