@@ -29,15 +29,13 @@ public function registerBundles()
 ## Config
 config.yml
 ```yaml
-check_book_io:
-    publishable_key:  "%checkbook_publishable_key%"       # public_key
-    secret_key:       "%checkbook_secret_key%"            # private_key
-    sandbox:          "%checkbook_sandbox%"               # use sandbox mode
-    debug:            "%checkbook_debug%"                 # use debug mode
-    merchant_name:    "%checkbook_merchant_name%"         # merchant name to use
-    oauth:
-      client_id:      "%checkbook_oauth_client_id%"
-      handler:        path\to\custom\response\handler
+beyerz_api_adapter:
+  json:
+    my_client: #name of your client to be used, this will be accessable through container as beyerz_api_adapter.client.YOUR_CUSTOM_NAME
+      base_url: "first_base_url"
+      options:
+        - "an option"
+        - "another option"
 ```
 
 ## Files and their purpose
