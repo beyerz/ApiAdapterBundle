@@ -46,7 +46,8 @@ class Configuration implements ConfigurationInterface
         $builder = new TreeBuilder();
         $node = $builder->root(self::ENGINE_JSON);
 
-        $node->prototype('array')
+        $node->useAttributeAsKey('client')
+            ->prototype('array')
             ->children()
                 ->scalarNode(self::ENDPOINT_URL)
                     ->isRequired()
@@ -68,7 +69,8 @@ class Configuration implements ConfigurationInterface
         $builder = new TreeBuilder();
         $node = $builder->root(self::ENGINE_SOAP);
 
-        $node->prototype('array')
+        $node->useAttributeAsKey('client')
+            ->prototype('array')
             ->children()
                 ->scalarNode(self::ENDPOINT_WSDL)
                     ->isRequired()
@@ -90,7 +92,8 @@ class Configuration implements ConfigurationInterface
         $builder = new TreeBuilder();
         $node = $builder->root(self::ENGINE_XML);
 
-        $node->prototype('array')
+        $node->useAttributeAsKey('client')
+            ->prototype('array')
             ->children()
                 ->scalarNode(self::ENDPOINT_URL)
                     ->isRequired()
