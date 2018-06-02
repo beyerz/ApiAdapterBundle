@@ -21,7 +21,7 @@
   "require": {
     "php": ">=7.0",
     "symfony/symfony": "2.8.*",
-    "jms/serializer-bundle": "^1.1",
+    "jms/serializer-bundle": "^1.0.0|2.0.0",
     "besimple/soap": "0.2.6",
     "csa/guzzle-bundle": "^2.0"
   },
