@@ -1,6 +1,6 @@
 # Api Client Bundle
 ## About
-Api Client Bundle for Symfony2
+Api Adapter Bundle for Symfony2
 
 This bundle provides a gateway and adapter pattern for connecting to thrid party apis.
 
@@ -10,17 +10,17 @@ Using JMSSerializer, you will simply need to provide the data class to be popula
 
 ### Composer (Recommended)
 
-    composer require beyerz/api-client-bundle
+    composer require beyerz/api-adapter-bundle
 
 ### Application Kernel
 
-Add ApiClientBundle to the `registerBundles()` method of your application kernel:
+Add BeyerzApiAdapterBundle to the `registerBundles()` method of your application kernel:
 Due to the way that this bundle is compiled and the fact that other bundles could require it, please ensure that the bundle is the last parameter in the array.
 ```php
 public function registerBundles()
 {
     return array(
-        new Beyerz\ApiClientBundle\BeyerzApiClientBundle(),
+        new Beyerz\ApiAdapterBundle\BeyerzApiAdapterBundle(),
     );
 }
 ```
