@@ -1,4 +1,4 @@
-# Api Client Bundle
+# Api Adapter Bundle
 ## About
 Api Adapter Bundle for Symfony2
 
